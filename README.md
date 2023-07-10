@@ -1,2 +1,2 @@
 # hackerrank-solutions
-This repository contains my solutions to HackerRank problems
+This repository contains my (Python 3) solutions to [HackerRank problems](https://www.hackerrank.com/dashboard)
