@@ -8,46 +8,31 @@ import sys
 
 
 #
-# Complete the 'countingValleys' function below.
+# Complete the 'pangrams' function below.
 #
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER steps
-#  2. STRING path
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
 #
 
-def countingValleys(steps, path):
+def pangrams(s):
     # Write your code here
+    s_stripped = ''.join(s.split()).lower()
+    s_set = set(s_stripped)
 
-    cur_level = 0
+    alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
 
-    prev_level = -1
-
-    valley_counter = 0
-
-    for step in path:
-        prev_level = cur_level
-
-        if step == 'D':
-            cur_level -= 1
-        elif step == 'U':
-            cur_level += 1
-
-        if (prev_level == 0) and (cur_level == -1):
-            valley_counter += 1
-
-    return valley_counter
+    if s_set == alphabet:
+        return 'pangram'
+    return 'not pangram'
 
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    steps = int(input().strip())
+    s = input()
 
-    path = input()
+    result = pangrams(s)
 
-    result = countingValleys(steps, path)
-
-    fptr.write(str(result) + '\n')
+    fptr.write(result + '\n')
 
     fptr.close()
