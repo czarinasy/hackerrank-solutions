@@ -16,7 +16,7 @@ import sys
 
 def flippingBits(n):
     # Write your code here
-    n_bits = f'{n:08b}'
+    n_bits = f'{n:032b}'
     print(n_bits)
 
     flipped_bits = ''
